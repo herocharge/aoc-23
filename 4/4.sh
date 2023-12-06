@@ -1,0 +1,1 @@
+for x in $(for i in {1..198}; do for win in $(cat input4 | cut -f2 -d":" | cut -f1 -d"|" | head -n $i | tail -n 1); do echo $(cat input4 | cut -f2 -d":" | cut -f2 -d"|" | head -n $i | tail -n 1) | tr " " "\n" | grep -o "^$win$"; done | wc -l; done); do echo  "if($x > 0) 2^($x-1) else 0" | bc; done | paste -sd+ | bc
